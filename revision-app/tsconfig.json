@@ -12,6 +12,12 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
+    "paths": {
+      "ngx-ui-components": ["dist/ngx-ui-components"],
+      "@revision/ngx-ui-components": [
+        "projects/ngx-ui-components/src/public-api.ts"
+      ]
+    },
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,

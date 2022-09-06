@@ -129,6 +129,37 @@
           }
         }
       }
+    },
+    "ngx-ui-components": {
+      "projectType": "library",
+      "root": "projects/ngx-ui-components",
+      "sourceRoot": "projects/ngx-ui-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-ui-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-ui-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-ui-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-ui-components/src/test.ts",
+            "tsConfig": "projects/ngx-ui-components/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-ui-components/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
