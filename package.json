@@ -1,0 +1,11 @@
+{
+  "name": "ng-revision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AG2RD/ng-revision.git",
+  "author": "ag2rd <agerard@altissia.org>",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/cli": "^14.2.1"
+  }
+}
