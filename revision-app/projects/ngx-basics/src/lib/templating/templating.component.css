@@ -1,0 +1,4 @@
+.directive-template-ref-wrapper {
+  display: flex;
+  flex-flow: column;
+}

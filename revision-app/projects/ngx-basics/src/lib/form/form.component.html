@@ -1,0 +1,65 @@
+<p>form works 2!</p>
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <div class="form-group">
+    <label for="favoriteColor">favoriteColor</label>
+    <input
+      id="favoriteColor"
+      name="favoriteColor"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model.favoriteColor"
+      #favoriteColorInput="ngModel"
+      required
+    />
+    <p
+      [hidden]="favoriteColorInput.valid || favoriteColorInput.pristine"
+      class="alert alert-danger"
+    >
+      favoriteColor is required
+    </p>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model.name"
+      #nameInput="ngModel"
+      required
+    />
+    <p
+      [hidden]="nameInput.valid || nameInput.pristine"
+      class="alert alert-danger"
+    >
+      name is required
+    </p>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <select
+      id="hero-power"
+      name="hero-power"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model.heroPower"
+      #heroPowerInput="ngModel"
+      required
+    >
+      <option *ngFor="let heroPower of heroPowers" [value]="heroPower">
+        {{ heroPower }}
+      </option>
+    </select>
+    <p
+      [hidden]="heroPowerInput.valid || heroPowerInput.pristine"
+      class="alert alert-danger"
+    >
+      name is required
+    </p>
+  </div>
+  <button (submit)="onSubmit()">submit</button>
+</form>
+<div *ngIf="submitted && favoriteColorInput.valid">
+  <p>my favoriteColor: {{ model | json }}</p>
+</div>

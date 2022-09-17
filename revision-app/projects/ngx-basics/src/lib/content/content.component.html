@@ -1,0 +1,70 @@
+<p>content works!</p>
+<section>
+  <h3>View Child</h3>
+  <section>
+    <h4>Template reference variable</h4>
+    <p><dfn>Template reference variable</dfn> can refer to the following:</p>
+    <ul>
+      <li>
+        <p>A DOM element within a template</p>
+        <div #divTemplateRef>test</div>
+      </li>
+      <li>
+        <p>a TemplateRef from an ng-template</p>
+        <ng-template [ngIf]="true"><p>coucou i'm a template</p></ng-template>
+      </li>
+      <li>
+        <p>a directive or component</p>
+        <div class="directive-template-ref-wrapper">
+          <pane id="1" *ngIf="shouldShow">pane1</pane>
+          <pane id="2" *ngIf="!shouldShow">pane2</pane>
+          <button (click)="toggle()">Toggle</button>
+          <p>Selected: {{ selectedPane }}</p>
+        </div>
+      </li>
+
+      <li>a web component</li>
+      <li>
+        <p>viewchild on a provided service</p>
+        <lib-child></lib-child>
+      </li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h3>viewChildren</h3>
+  <myTargetDirective id="1">directive 1</myTargetDirective>
+  <myTargetDirective id="2">directive 2</myTargetDirective>
+  <myTargetDirective id="3">directive 3</myTargetDirective>
+</section>
+<section>
+  <h3>Projection of content</h3>
+  <section>
+    <h4>Single-slot content projection</h4>
+    <lib-child>
+      <p>default projected content</p>
+    </lib-child>
+  </section>
+  <section>
+    <h4>Multiple-slot content projection</h4>
+    <lib-child>
+      <p>default projected content</p>
+      <p target>target slot content</p>
+    </lib-child>
+  </section>
+  <section>
+    <h4>Conditional content projection</h4>
+    <lib-child>
+      <p>blabalblalblalbll</p>
+    </lib-child>
+  </section>
+</section>
+<section>
+  <h3>viewContainer</h3>
+</section>
+<section>
+  <h3>EmbeddedViewRef</h3>
+</section>
+<section>
+  <h3>ComponentRef</h3>
+</section>
