@@ -1,0 +1,13 @@
+[type="submit"] {
+  display: block;
+  padding: 0.8em;
+}
+
+p.error {
+  color: brown;
+}
+
+input.ng-invalid {
+  border-color: brown;
+  background-color: red;
+}

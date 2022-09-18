@@ -1,0 +1,60 @@
+<p>templating-form works!</p>
+<p *ngIf="submitted">Result : {{ formModel | json }}</p>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="lastName">lastName:</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      class="form-control"
+      required
+      [attr.class]="{ error: !lastNameElement.valid }"
+      #lastNameElement="ngModel"
+      [(ngModel)]="formModel.lastName"
+    />
+    <p
+      class="error"
+      [hidden]="lastNameElement.valid || lastNameElement.pristine"
+    >
+      Error
+    </p>
+  </div>
+  <div>
+    <label for="firstName">firstname:</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      required
+      class="form-control"
+      #firstNameElement="ngModel"
+      [(ngModel)]="formModel.firstName"
+    />
+    <p
+      class="error"
+      [hidden]="firstNameElement.valid || firstNameElement.pristine"
+    >
+      Error
+    </p>
+  </div>
+  <label for="superPowerElement">super power:</label>
+  <select
+    [(ngModel)]="formModel.superPower"
+    name="superPower"
+    class="form-control"
+    #superPowerElement="ngModel"
+  >
+    <option *ngFor="let item of superPowers" [value]="item" name="item">
+      {{ item }}
+    </option>
+  </select>
+
+  <button
+    type="submit"
+    (submit)="onSubmit()"
+    [disabled]="!firstNameElement.valid || !lastNameElement.valid"
+  >
+    submit
+  </button>
+</form>

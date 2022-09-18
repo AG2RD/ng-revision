@@ -11,6 +11,7 @@ import { NgxbasicsRoutingModule } from './routing/ngx-basics.routing.module';
 import { ServiceChildComponent } from './service-child/service-child.component';
 import { ServiceInstantiationComponent } from './service-instantiation/service-instantiation.component';
 import { TemplatingComponent } from './templating/templating.component';
+import { TemplatingFormComponent } from './templating-form/templating-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TemplatingComponent } from './templating/templating.component';
     ChildComponent,
     ServiceInstantiationComponent,
     ServiceChildComponent,
+    TemplatingFormComponent,
   ],
   imports: [CommonModule, NgxbasicsRoutingModule, FormsModule],
   exports: [
