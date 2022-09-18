@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ChildComponent } from './child/child.component';
 import { ContentComponent, MyTargetDirective, Pane } from './content/content.component';
@@ -10,8 +10,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgxbasicsRoutingModule } from './routing/ngx-basics.routing.module';
 import { ServiceChildComponent } from './service-child/service-child.component';
 import { ServiceInstantiationComponent } from './service-instantiation/service-instantiation.component';
-import { TemplatingComponent } from './templating/templating.component';
 import { TemplatingFormComponent } from './templating-form/templating-form.component';
+import { TemplatingComponent } from './templating/templating.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +27,18 @@ import { TemplatingFormComponent } from './templating-form/templating-form.compo
     ServiceChildComponent,
     TemplatingFormComponent,
   ],
-  imports: [CommonModule, NgxbasicsRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    NgxbasicsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     NgxBasicsComponent,
     TemplatingComponent,
     FormComponent,
-    ReactiveFormComponent,
     ContentComponent,
+    ReactiveFormComponent,
   ],
 })
 export class NgxBasicsModule {}

@@ -7,7 +7,6 @@
       type="text"
       id="lastName"
       name="lastName"
-      class="form-control"
       required
       [attr.class]="{ error: !lastNameElement.valid }"
       #lastNameElement="ngModel"
@@ -27,7 +26,6 @@
       id="firstName"
       name="firstName"
       required
-      class="form-control"
       #firstNameElement="ngModel"
       [(ngModel)]="formModel.firstName"
     />
@@ -42,7 +40,6 @@
   <select
     [(ngModel)]="formModel.superPower"
     name="superPower"
-    class="form-control"
     #superPowerElement="ngModel"
   >
     <option *ngFor="let item of superPowers" [value]="item" name="item">
